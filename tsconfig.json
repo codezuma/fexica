@@ -15,11 +15,17 @@
       "@components/*": [
         "./components/*"
       ],
-      "@layouts/*": [
-        "./layouts/*"
+      "@layout/*": [
+        "./layout/*"
+      ],
+      "@ui/*": [
+        "./components/ui/*"
       ],
       "@assets/*": [
         "./assets/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
       ],
       "@pages/*": [
         "pages/*"
