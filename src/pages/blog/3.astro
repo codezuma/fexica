@@ -1,0 +1,51 @@
+---
+import PageLayout from "../../layout/page-layout.astro";
+import FromBlogSection from '../../components/sections/blog/from-blog-section.astro';
+import AuthorCard2 from "../../components/shared/blog/author-card-2.astro";
+import Avatar from "../../components/ui/avatar.astro";
+import Footer from "../../components/sections/footer.astro";
+
+---
+
+<PageLayout>
+    <section class="container-main relative mx-auto px-0 md:flex-row flex-col-reverse md:min-h-[calc(100vh-80px)] mt-20 flex justify-end">
+        <aside class=" bg-[url('https://random.imagecdn.app/500/1200')] h-96 bg-rep mx-4 md:mx-0  md:min-h-[calc(100vh-80px)] block  text-white  md:flex-1 ">
+
+      
+        </aside>
+        <div class="  px-4 w-full flex-1 flex items-center pt-24 md:mb-16 flex-col">
+            <header class="w-full mb-16 flex justify-between h-full  flex-col mx-auto text-start md:w-4/5">
+                <div class="mb-4">
+
+                    <h2
+                    class="xl:text-5xl md:text-4xl text-3xl !leading-snug text-gray-900 font-semibold mb-7"
+                    >
+                    Roy’s PeakWanaka, New Zealand                </h2>
+                    <p class="md:text-xl text-lg  text-gray-600">
+                        New Zealand is famous for its breathtaking hiking trails that wind and weave their way through its beautiful landscapes.
+                    </p>
+                </div>
+                <div class="flex gap-4 self-end mt-auto mr-auto ">
+                    <Avatar src="https://random.imagecdn.app/100/100"/>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">Rene Wells</h2>
+                        <h2 class=" text-gray-600">Content Writer</h2>
+                    </div>
+                </div>
+            </header>
+            
+
+    </div>
+    </section>
+    
+    <section class="container-main">
+        <div class="h-[900px] p-24">
+            //Here comes content
+        </div>
+
+        <AuthorCard2/>
+    </section>
+    <FromBlogSection/>
+
+    <Footer/>
+</PageLayout>

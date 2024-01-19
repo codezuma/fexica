@@ -1,0 +1,41 @@
+---
+import type { Plan } from '../../../types/plan';
+
+interface Props{
+    plan:Plan
+}
+let {plan} = Astro.props;
+
+
+---
+
+
+<div class="p-4 min-w-[300px] flex-1 rounded-md shadow">
+    <header class="pt-6 pb-12">
+        <div class='w-full mb-4  justify-between flex '>
+            <span class="text-lg font-semibold">{plan.name}</span>
+            {plan.popular && 
+            <span class="px-2 py-1 rounded-full bg-primary-50 text-primary text-xs font-semibold">popular</span>
+            }
+        </div>
+        <div class="flex gap-2 items-end mb-4">
+            <h2 class="text-6xl font-semibold">{plan.price}</h2>
+            <p class="text-gray-600">per month</p>
+        </div>
+        <p class='text-gray-600 font-medium mb-8'>{plan.description}</p>
+        <div class="flex flex-col gap-4">
+            <button class="button-primary">{plan.primary_cta}</button>
+            <button class="button-outline">{plan.secondary_cta}</button>
+        </div>
+    </header>
+    <main>
+        <h3 class="font-semibold text-gray-900 uppercase">FEATURES</h3>
+        <p class="line-clamp-1 overflow-hidden text-ellipsis mb-2 text-gray-600">{plan.featureDesc}</p>
+        <ul class="flex flex-col gap-1">
+            { plan.features.map(feature=>    <li class="font-medium text-gray-600">
+                {feature}
+            </li>) }
+        
+        </ul>
+    </main>
+</div>

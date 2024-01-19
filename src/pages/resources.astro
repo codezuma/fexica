@@ -1,0 +1,25 @@
+---
+import HeroSection from "../components/sections/resource/hero-section.astro";
+import PageLayout from "../layout/page-layout.astro";
+import BlogSection from "../components/sections/blog/blog-section.astro";
+import NewsletterSection from "../components/sections/newsletter-section.astro";
+import FooterLarge from "../components/sections/home/footer-large.astro";
+import ResourceCard from "../components/shared/blog/resource-card.astro";
+const resource = {
+        title: "Cooking Tips and Recipes",
+        date: "10 Mar 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 3",
+        description: "Discover new cooking tips and delicious recipes from around the world.",
+        tags: ["cooking", "recipes", "food"]
+    }
+---
+<PageLayout dark>
+    <HeroSection/>
+    <div class="container-main md:-mt-20 mt-10">
+        <ResourceCard {...resource} largeImage   className="w-full"/>
+    </div>
+    <BlogSection/>
+    <NewsletterSection/>
+    <FooterLarge/>
+</PageLayout>

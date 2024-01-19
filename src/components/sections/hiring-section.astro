@@ -1,0 +1,28 @@
+---
+import Chip from "../ui/chip.astro";
+import HiringCard from '../shared/team/hiring-card.astro'
+
+---
+
+<section class="container-main py-24">
+    <header class="w-full mx-auto mb-16 text-center md:w-3/5">
+        <div class="w-fit mx-auto mb-2"><Chip color="purple">Careers</Chip></div>
+        <h2
+            class="xl:text-5xl md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-7"
+        >
+        We’re looking for talented people                </h2>
+        <p class="md:text-xl text-lg text-gray-600">
+            Untitled is growing fast, and we are always looking for passionate, dynamic, and talented individuals to join our distributed team all around the world.        </p>
+    </header>
+    <div class="pt-12 mb-12">
+        <img  class="w-full h-96 object-cover" src="https://images.pexels.com/photos/8553867/pexels-photo-8553867.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+    </div>
+    <div class="md:w-3/5 mx-auto w-full">
+        <h2 class="text-xl font-semibold text-gray-900 mb-8">Design</h2>
+<div class="flex flex-col gap-6">
+    <HiringCard/>
+    <HiringCard/>
+    <HiringCard/>
+</div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+---
+const stats = [
+  {
+    value: "400+",
+    label: "Projects completed",
+  },
+  {
+    value: "600%",
+    label: "Return on investment",
+  },
+  {
+    value: "10k",
+    label: "Global downloads",
+  },
+  {
+    value: "200+",
+    label: "5-star reviews",
+  },
+];
+---
+<section class="container-main  flex flex-col md:gap-12 gap-4 h-fit  pt-0 md:py-24 py-16">
+    <figure class="flex-1 bg-slate-300 rounded bg-[url('https://images.unsplash.com/photo-1639493115941-a70fcef4f715?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZGllbnQlMjBtZXNofGVufDB8fDB8fHww&w=1000&q=80')] max-h-">
+    </figure>
+    <main class="flex-1 ">
+        <header class="mb-16">
+            <h1 class="mb-3 text-primary font-semibold">Build better,launch faster</h1>
+            <p class="!leading-tight xl:text-5xl md:text-4xl text-3xl  font-semibold">We’re only just getting started on our journey</p>
+        </header>
+        <data class="grid grid-cols-2 gap-12">
+          { stats.map(stat=>( <div class="col-span-1">
+                <h2 class="xl:text-6xl mb-3 font-semibold text-primary md:text-4xl text-3xl">{stat.value}</h2>
+                <p class="text-gray-600 font-medium">{stat.label}</p>
+            </div>))}
+        </data>
+    </main>
+</section>

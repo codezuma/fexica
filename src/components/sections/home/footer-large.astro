@@ -1,0 +1,81 @@
+---
+import Logo from "../../ui/logo.astro";
+type Props = {
+    className?:string;
+}
+const links = ["Terms", "Privacy", "Cookies"];
+const {className} = Astro.props;
+---
+
+<footer class:list={["bg-gray-900 pt-20 pb-12 relative w-full",className]}>
+    <main class="flex gap-12  container-main flex-wrap">
+        <div class="flex flex-1 min-w-[300px] flex-col  gap-6">
+            <Logo />
+            <p class="text-lg md:w-3/5 w-full text-white">
+                Design amazing digital experiences that create more happy in the
+                world.
+            </p>
+        </div>
+        <div class="flex-1 flex flex-wrap gap-8">
+            <div class="w-32 flex-1">
+                <h3 class="text-gray-300 mb-4  text-sm">product</h3>
+                <ul class="flex flex-col gap-3 text-gray-100">
+                    {
+                        [
+                            "Product",
+                            "Overview",
+                            "Features",
+                            "Solutions",
+                            "New",
+                            "Tutorials",
+                            "Pricing",
+                            "Releases",
+                        ].map((link) => <a href="">
+                            <li>{link}</li>
+                            </a>
+                            )
+                    }
+                </ul>
+            </div>
+            <div class="w-32 flex-1">
+                <h3 class="text-gray-300 mb-4  text-sm">product</h3>
+                <ul class="flex flex-col gap-3 text-gray-100">
+                    {
+                        [
+                            "Product",
+                            "Overview",
+                            "Features",
+                            "Solutions",
+                            "New",
+                            "Tutorials",
+                            "Pricing",
+                            "Releases",
+                        ].map((link) => <a href="">
+                            <li>{link}</li>
+                            </a>
+                            )
+                    }
+                </ul>
+            </div>
+            <div class="flex-1"> 
+                <h3 class="text-lg mb-4 text-white">Stay up to date</h3>
+
+                <div class="flex flex-col md:flex-row mb-1 gap-4">
+                    <input class="px-4 outline-none border-2 h-12 min-w-[200px] focus:border-primary focus:border-2 border- rounded bg-white " placeholder="Enter your email" />
+                    <button class="button-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<footer class="container-main mt-12 ">
+    <div class="md:px-8 flex border-t-2 md:flex-row gap-4 flex-col-reverse  border-gray-800 py-8">
+        <p class="flex-1 text-white">© 2077 Untitled UI. All rights reserved.</p>
+        <div class="flex gap-2">
+            {links.map(link=><a class="text-gray-100 hover:text-white font-medium">{link}</a>)}
+        </div>
+    </div>
+</footer>
+
+</footer>

@@ -1,0 +1,69 @@
+---
+const contactData = [
+    {
+        title: "Chat to support",
+        description: "We're here to help.",
+        link: "support@untitledui.com",
+    },
+    {
+        title: "Chat to support",
+        description: "We’re here to help.",
+        link: "support@untitledui.com",
+    },
+    {
+        title: "Visit us",
+        description: "Visit our office HQ.",
+        link: "100 Smith Street, Collingwood VIC 3066 AU",
+    }
+];
+---
+
+<div class="relative w-full bg-gray-900 py-24">
+    <section class="container-main w mx-auto relative text-white z-10 pt-24 mb-16">
+        <header class="w-full mx-auto mb-16 ">
+            <span class="px-2 py-1 text-gray-100 font-medium block mb-3">Nice to meet you</span>
+            <div class="flex md:flex-row items-end flex-col">
+
+                <h2
+                class="xl:text-5xl flex-[2] md:text-4xl text-3xl leading-snug text-gray-50 font-semibold mb-7"
+                >
+                About our company
+            </h2>
+            <p class="md:text-xl text-lg flex-1 text-gray-200">
+                Learn more about the company and the team behind it. We’re hiring!
+            </p>
+        </div>
+        </header>
+    </section>
+</div>
+<section class="container-main py-24 ">
+    <header class="w-full text-center mx-auto md:w-3/5 mb-16">
+        <h3 class="md:text-[36px] text-3xl font-semibold mb-5 leading-snug text-gray-900">
+            We’re hiring!        </h3>
+        <p class="text-gray-500 md:text-xl text-lg leading-normal">
+            We’re looking for smart, motivated people. No matter where you live.
+        </p>
+    </header>
+    <figure class="rounded overflow-hidden  mb-6 w-full">
+        <img class="max-h-[500px] transition-all bg-gray-200 w-full object-cover hover:scale-100 scale-105" src="https://images.pexels.com/photos/7551442/pexels-photo-7551442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </figure>
+    <main class="grid grid-cols-3 md:gap-12 gap-4">
+
+        {
+            contactData.map((feature) => (
+                <div class="p-4 col-span-4 md:col-span-2 xl:col-span-1 bg-gray-100/80 rounded-md">
+                    <figure class="w-12 h-12 mb-8 bg-primary rounded" />
+                    <main class="mb-5">
+                        <h3 class="md:text-xl text-lg mb-2 font-semibold text-gray-900">
+                            {feature.title}
+                        </h3>
+                        <p class="text-gray-600">{feature.description}</p>
+                    </main>
+                    <a href="" class="text-primary text-medium">
+                        {feature.link}
+                    </a>
+                </div>
+            ))
+        }
+    </main>
+</section>

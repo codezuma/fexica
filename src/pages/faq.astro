@@ -1,0 +1,33 @@
+---
+import FaqSection from "../components/sections/faq-section.astro";
+import ContractSection from "../components/sections/contract-section.astro";
+import GetInTouchSection from "../components/sections/home/get-in-touch-section.astro";
+import NewsletterSection from "../components/sections/newsletter-section.astro";
+import PageLayout from "../layout/page-layout.astro";
+---
+
+<PageLayout dark>
+    <div class="relative w-full bg-gray-900 py-24">
+        <section class="container-main  mx-auto text-center relative text-white z-10  mb-16">
+            <header class="w-full mx-auto mb-16 ">
+                <span class="px-2 py-1 text-gray-100 font-medium block mb-3">Support</span>
+                <div class=" md:flex-row items-end flex-col">
+    
+                    <h2
+                    class="xl:text-5xl flex-[2] md:text-4xl text-3xl leading-snug text-gray-50 font-semibold mb-7"
+                    >
+                    Everything you need to know                </h2>
+                <p class="md:text-xl text-lg flex-1 text-gray-200">
+                    Need something cleared up? Here are our most frequently asked questions.</p>
+            </div>
+            </header>
+            <input class="px-4 md:w-[400px] mx-auto outline-none border-2 h-12 focus:border-primary focus:border-2 border- rounded bg-white " placeholder="Search" />
+        </section>
+    </div>
+    <div class="py-24 w-full">
+        <FaqSection/>
+        </div>  
+    <GetInTouchSection/>
+    <ContractSection/>
+    <NewsletterSection/>
+</PageLayout>

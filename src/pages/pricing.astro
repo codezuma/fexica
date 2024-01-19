@@ -1,0 +1,19 @@
+---
+import PageLayout from "../layout/page-layout.astro";
+import PricingSection from "../components/sections/pricing-page/pricing-section.astro";
+import FaqSection from "../components/sections/faq-section.astro";
+import GetInTouchSection from "../components/sections/home/get-in-touch-section.astro";
+import FooterLarge from "../components/sections/home/footer-large.astro";
+import TrialAdSection from "../components/sections/trial-ad-section.astro";
+---
+
+<PageLayout title="Pricing Page">
+    <PricingSection />
+    <FaqSection/>
+    <GetInTouchSection/>
+    <div class="w-full relative flex-col md:flex-row z-20 md:-bottom-20 bottom-0 md:py-0 py-16"
+    >
+        <TrialAdSection/>
+    </div>
+    <FooterLarge className="md:pt-52"/>
+</PageLayout>

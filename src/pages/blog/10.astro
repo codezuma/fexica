@@ -1,0 +1,55 @@
+---
+import PageLayout from "../../layout/page-layout.astro";
+import LatestBlog from '../../components/sections/blog/latest-blog-section.astro';
+import FooterLarge from "../../components/sections/home/footer-large.astro";
+import Chip from "../../components/ui/chip.astro";
+import AuthorCard2 from "../../components/shared/blog/author-card-2.astro";
+import NewsletterDark from "../../components/sections/newsletter-dark.astro";
+import Avatar from "../../components/ui/avatar.astro";
+
+const tags =["marketing", "design", "presentation"];
+---
+<PageLayout>
+    <section class="md:py-24 py-12  container-main mt-20">
+        <header class="w-full mb-16 md:px-12 flex justify-center flex-col mx-auto text-center md:w-3/5">
+            <span class="text-primary font-semibold block mb-3"
+                >Published 13 Jan 2024</span
+            >
+            <h2
+                class="xl:text-5xl md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-7"
+            >
+                A conversation with Lucy Bond
+            </h2>
+            <p class="md:text-xl mb-8 text-lg text-gray-600">
+                Lucy Bond is an interior designer who started her career in New
+                Zealand, working for large architectural firms. We chatted to
+                her about design and starting her own studio.
+            </p>
+            <div class="flex gap-4 mx-auto mt-auto  ">
+                <Avatar src="https://random.imagecdn.app/100/100"/>
+                <div>
+                    <h2 class="text-lg font-semibold text-gray-900">Rene Wells</h2>
+                    <h2 class=" text-gray-600">Content Writer</h2>
+                </div>
+            </div>
+        </header>
+        <figure class="h-96 md:px-12 rounded-xl overflow-hidden">
+            <img
+            class="h-full w-full object-cover"
+            src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+            />
+        </figure>
+        <div class="flex gap-4 justify-center py-12 mx-auto">            {tags.map(tag=><Chip color="blue">{tag}</Chip>)}</div>
+    </section>
+    <section class="container-main">
+        <div class="h-[900px] p-24">
+            //Here comes content
+        </div>
+
+        <AuthorCard2/>
+    </section>
+    <LatestBlog/>
+<NewsletterDark/>
+    <FooterLarge/>
+</PageLayout>

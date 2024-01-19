@@ -1,0 +1,56 @@
+---
+import ResourceCard from '../../shared/blog/resource-card.astro'
+const resources = [
+    {
+        title: "Delicious Dessert Creations",
+        date: "15 Apr 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 1",
+        description: "Indulge in mouthwatering dessert recipes that will satisfy your sweet cravings.",
+        tags: ["desserts", "recipes", "food"]
+    },
+    {
+        title: "Healthy Eating Habits",
+        date: "22 May 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 2",
+        description: "Learn how to maintain a balanced diet and make healthier food choices.",
+        tags: ["healthy eating", "nutrition", "food"]
+    },
+    {
+        title: "Gourmet Cooking Adventures",
+        date: "7 Jul 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 3",
+        description: "Embark on a culinary journey with gourmet recipes that will elevate your cooking skills.",
+        tags: ["gourmet", "recipes", "food"]
+    },
+    {
+        title: "Vegetarian Delights",
+        date: "18 Sep 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 4",
+        description: "Explore a world of delicious vegetarian dishes that are both nutritious and flavorful.",
+        tags: ["vegetarian", "recipes", "food"]
+    },
+    {
+        title: "International Flavors",
+        date: "5 Nov 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 5",
+        description: "Experience the taste of different cultures with international recipes from diverse cuisines.",
+        tags: ["international cuisine", "recipes", "food"]
+    },
+    {
+        title: "Baking Mastery",
+        date: "12 Dec 2024",
+        imageSrc: "https://random.imagecdn.app/1200/1200",
+        altText: "Image Alt Text 6",
+        description: "Perfect your baking skills with a collection of delectable pastry and bread recipes.",
+        tags: ["baking", "recipes", "food"]
+    }
+];
+---
+<section class="grid container-main md:gap-12 gap-8 grid-cols-4 sm:grid-cols-8 xl:grid-cols-12 py-24">
+    {resources.map(resource=>(<ResourceCard className='col-span-4' {...resource}/>))}
+</section>

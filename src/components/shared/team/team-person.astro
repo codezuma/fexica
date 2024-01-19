@@ -1,0 +1,20 @@
+---
+interface Props   {
+    className?:string
+}
+const {className} = Astro.props;
+---
+
+<article class:list={["flex flex-col gap-5",className]}>
+    <figure class='aspect-square'>
+        <img class="w-full h-full object-cover"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwJzyQcBu_7EH0wSSW14L4Edxsj3X8AJKcy3UBpQE33iMrZ8Z3SNXmPpEZyqsl898vYwI&usqp=CAU"
+            alt=""
+/>
+    </figure>
+    <main>
+        <h2 class="text-xl mb-1 font-semibold">Amélie Laurent</h2>
+        <p class="text-primary">Engineering Manager</p>
+    </main>
+    <p class="text-gray-600">Former co-founder of Opendoor. Early staff at Spotify and Clearbit.</p>
+</article>

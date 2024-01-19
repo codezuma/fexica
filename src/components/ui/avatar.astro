@@ -1,0 +1,23 @@
+---
+type Props = {
+ src?:string;
+ size?:'sm'|'md'|'large';
+}
+
+const {src,size='md'} = Astro.props;
+const sizeClass = ()=>{
+    if(size=='md')
+    return 'w-12 h-12';
+    if(size=='sm')
+    return 'w-8 h-8';
+    if(size=='large')
+    return 'w-16 h-16';
+
+    return 'w-12 h-12'
+}
+
+---
+
+<figure>
+    <img src={src} alt="avatar" class:list={["rounded-full",sizeClass()]} />
+</figure>

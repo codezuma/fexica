@@ -1,0 +1,91 @@
+---
+import Dropdown from "./navbar-dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Logo from "../ui/logo.astro";
+
+type MenuItem = {
+    title:string,
+    path:string,
+children?:MenuItem[]
+}
+const menuitems:MenuItem[] = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Resources",
+    path: "/resources",
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+];
+---
+
+<script>
+    function handleScroll() {
+        const navbar = document.querySelector("#primary-navbar");
+        if (window.scrollY > 0) {
+            navbar?.classList.add("bg-white");
+        } else {
+            navbar?.classList.remove("bg-white");
+        }
+    }
+    window.onscroll = () => {
+        handleScroll();
+    };
+
+    window.removeEventListener("scroll", handleScroll);
+</script>
+
+
+  <header class="flex container-main flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+        <a href="/" class="mr-12"><Logo /></a>
+ 
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a href={`/${item.path.toLowerCase()}`} class="font-semibold ml-8 hover:text-gray-800 transition-all text-base text-gray-600 cursor-pointer">
+                      {item.title}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+            <button class="button-outlined">Log in</button>
+            <button class="button-primary">Sign up</button>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div class="ml-auto">
+      <div class="hidden lg:flex items-center gap-4">
+      <button class="button-outlined">Log in</button>
+            <button class="button-primary">Sign up</button>
+       </div>
+    </div>
+    <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-gray-800" />
+      </div>
+  </header>

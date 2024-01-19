@@ -1,0 +1,57 @@
+---
+const contactData = [
+    {
+        title: "Chat to support",
+        description: "We're here to help.",
+        link: "support@untitledui.com",
+    },
+    {
+        title: "Chat to support",
+        description: "We’re here to help.",
+        link: "support@untitledui.com",
+    },
+    {
+        title: "Visit us",
+        description: "Visit our office HQ.",
+        link: "100 Smith Street, Collingwood VIC 3066 AU",
+    },
+    {
+        title: "Call us",
+        description: "Mon-Fri from 8am to 5pm.",
+        link: "+1 (555) 000-0000",
+    },
+];
+---
+
+<section class="container-main my-[96px]">
+    <header class="w-full md:w-3/5 mb-16">
+        <h2 class="font-semibold text-primary mb-3">Our capabilites</h2>
+        <h3 class="text-[36px] font-semibold mb-5 leading-snug text-gray-900">
+            We’re here every step of the way
+        </h3>
+        <p class="text-gray-500 md:text-xl text-lg  leading-normal">
+            We pride ourselves on our ability to challenge core assumptions,
+            unpick legacy behaviors, streamline complex processes, and strike a
+            balance between great design and functional development.
+        </p>
+    </header>
+    <main class="grid grid-cols-4 md:gap-12 gap-4">
+
+        {
+            contactData.map((feature) => (
+                <div class="p-4 col-span-4 md:col-span-2 xl:col-span-1 bg-gray-100/80 rounded-md">
+                    <figure class="w-12 h-12 mb-8 bg-primary rounded" />
+                    <main class="mb-5">
+                        <h3 class="md:text-xl text-lg mb-2 font-semibold text-gray-900">
+                            {feature.title}
+                        </h3>
+                        <p class="text-gray-600">{feature.description}</p>
+                    </main>
+                    <a href="" class="text-primary text-medium">
+                        {feature.link}
+                    </a>
+                </div>
+            ))
+        }
+    </main>
+</section>

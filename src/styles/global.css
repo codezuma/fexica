@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    html{
+        font-family: 'Inter', sans-serif;
+    }
+    a{
+@apply hover:underline cursor-pointer    }
+    :root {
+        --primary: #010101;
+        --primary-foreground: 210 40% 98%;
+    }
+}
+/* 
+*{
+    border:1px red solid;
+} */
+
+.test{
+    border:1px red solid;
+} 
+
+
+@layer components {
+    .container-main {
+        @apply xl:px-20 w-full md:px-12 px-6 max-w-[1520px];
+    }
+    .button {
+        @apply inline-flex items-center justify-center rounded-md text-sm px-3 py-2  font-medium ;
+    }
+    .button-primary{
+        @apply button bg-primary text-primary-foreground text-white tracking-wider hover:bg-primary/90;
+    }
+    .button-secondary{
+        @apply button bg-white text-primary-foreground  tracking-wider hover:bg-gray-100;
+    }
+    .button-outline{
+        @apply button bg-white border border-gray-200 text-primary-foreground   tracking-wider hover:bg-gray-100;
+    }
+    .button-tertiary{
+        @apply button text-primary-foreground  tracking-wider hover:bg-gray-100;
+    }
+    .button-large{
+        @apply md:px-6 px-4 md:py-3 py-2 text-lg;
+    }
+    input{
+        @apply bg-gray-50 focus:border-primary focus:border-2 outline-none   border-2 border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    }
+    textarea{
+        @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    }
+    input[type='radio']{
+        @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;    }
+     select{
+        @apply bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+     }
+    }

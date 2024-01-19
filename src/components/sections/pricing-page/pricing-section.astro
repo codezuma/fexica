@@ -1,0 +1,83 @@
+---
+import PricingCard from "../../shared/pricing/pricing-card.astro";
+import type { Plan } from '../../../types/plan';
+
+
+const plans:Plan[] = [
+    {
+        name: "Basic Plan",
+        price: "$10",
+        popular:true,
+        featureDesc:'Everything in our free plan plus',
+        description: "Basic features for up to 10 users.",
+        primary_cta: "Get started",
+        secondary_cta: "Chat to sales",
+        features: [
+            "Access to basic features",
+            "Basic reporting and analytics",
+            "Up to 10 individual users",
+            "20GB individual data each user",
+            "Basic chat and email support",
+        ],
+    },
+    {
+        name: "Basic Plan",
+        price: "$10",
+        popular:true,
+        featureDesc:'Everything in our free plan plus',
+        description: "Basic features for up to 10 users.",
+        primary_cta: "Get started",
+        secondary_cta: "Chat to sales",
+        features: [
+            "Access to basic features",
+            "Basic reporting and analytics",
+            "Up to 10 individual users",
+            "20GB individual data each user",
+            "Basic chat and email support",
+        ],
+    },
+    {
+        name: "Basic Plan",
+        price: "$10",
+        popular:true,
+        featureDesc:'Everything in our free plan plus',
+        description: "Basic features for up to 10 users.",
+        primary_cta: "Get started",
+        secondary_cta: "Chat to sales",
+        features: [
+            "Access to basic features",
+            "Basic reporting and analytics",
+            "Up to 10 individual users",
+            "20GB individual data each user",
+            "Basic chat and email support",
+        ],
+    },
+];
+---
+
+<section class="container-main mt-20 py-[96px]">
+    <header class="w-full mx-auto mb-16 text-center md:w-3/5">
+        <span class="px-2 py-1 text-primary font-semibold mb-3">Pricing</span>
+        <h2
+            class="xl:text-5xl md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-7"
+        >
+            Simple, transparent pricing
+        </h2>
+        <p class="md:text-xl text-lg text-gray-600">
+            We believe Untitled should be accessible to all companies, no matter
+            the size.
+        </p>
+    </header>
+    <main>
+        <div
+            class="px-2 py-1 mb-8  bg-gray-100 w-fit mx-auto gap-2 flex rounded-lg"
+        >
+            <button class="button-secondary">Monthly</button>
+            <button class="button text-gray-600">Yearly</button>
+        </div>
+        <div class="flex flex-wrap gap-12 w-full">
+
+            {plans.map(plan=><PricingCard plan={plan} />)}
+        </div>
+    </main>
+</section>

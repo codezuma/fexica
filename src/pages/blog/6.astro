@@ -1,0 +1,47 @@
+---
+import PageLayout from "../../layout/page-layout.astro";
+import LatestBlog from '../../components/sections/blog/latest-blog-section.astro';
+import FooterLarge from "../../components/sections/home/footer-large.astro";
+import Avatar from "../../components/ui/avatar.astro";
+import AuthorCard2 from "../../components/shared/blog/author-card-2.astro";
+---
+
+<PageLayout>
+    <section class="container-main mx-auto md:flex-row py-24 md:gap-16 gap-8  items-center flex-col md:min-h-[calc(100vh-80px)] mt-20 flex justify-end">
+                <div class="  md:px-4 px-2 w-full flex-1 flex items-center flex-col self-end">
+            <header class="w-full  mb-8 flex justify-between   flex-col mx-auto text-start relative ">
+                <span class="px-2 py-1 text-primary font-semibold mb-3">20 Jan 2024 • 10 min read</span>
+                <div class="mb-8">
+
+                    <h2
+                    class="xl:text-5xl md:text-4xl text-3xl !leading-snug text-gray-900 font-semibold mb-7"
+                    >
+                    Roy’s PeakWanaka, New Zealand                </h2>
+                    <p class="md:text-xl text-lg text-gray-600">
+                        New Zealand is famous for its breathtaking hiking trails that wind and weave their way through its beautiful landscapes.
+                    </p>
+                </div>
+                <div class="flex gap-4 self-end mt-auto mr-auto ">
+                    <Avatar src="https://random.imagecdn.app/100/100"/>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">Rene Wells</h2>
+                        <h2 class=" text-gray-600">Content Writer</h2>
+                    </div>
+                </div>
+            </header>
+            
+
+    </div>
+    <aside class=" bg-[url('https://random.imagecdn.app/500/500')] md:min-h-[calc(100vh-260px)]  h-[400px]  w-full block bg-no-repeat bg-cover md:flex-1 "/>
+
+    </section>
+    <section class="container-main">
+        <div class="h-[900px] p-24">
+            //Here comes content
+        </div>
+
+        <AuthorCard2/>
+    </section>
+    <LatestBlog/>
+    <FooterLarge/>
+</PageLayout>

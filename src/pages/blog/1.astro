@@ -1,0 +1,86 @@
+---
+import ArrowLeft from "../../icons/arrow-left.astro";
+import ArrowRight from "../../icons/arrow-right.astro";
+import PageLayout from "../../layout/page-layout.astro";
+import WriterCard  from '../../components/shared/blog/writer-card.astro';
+import LatestBlog from '../../components/sections/blog/latest-blog-section.astro';
+import ContractSection from "../../components/sections/contract-section.astro";
+import CtaSection from "../../components/sections/home/cta-section.astro";
+import FooterLarge from "../../components/sections/home/footer-large.astro";
+---
+
+    <script is:inline>
+        const carousels = document.getElementsByClassName("carousel");
+
+        Array.from(carousels).map((carousel) => {
+            const wrapper = carousel.getElementsByClassName('carousel-slide')[0];
+            const rightButton = carousel.getElementsByClassName('arrow-right')[0];
+            const leftButton = carousel.getElementsByClassName('arrow-left')[0];
+       
+            rightButton.addEventListener('click',()=>{
+                wrapper.scroll({left:wrapper.scrollLeft+300});
+            }) ;
+            leftButton.addEventListener('click',()=>{
+                wrapper.scroll({left:wrapper.scrollLeft-300});
+            }) ;
+        });
+    </script>
+<PageLayout>
+    <section class="md:py-24 py-12  container-main mt-20">
+        <header class="w-full mb-16 text-start md:w-3/5">
+            <span class="text-primary font-semibold block mb-3"
+                >Published 13 Jan 2024</span
+            >
+            <h2
+                class="xl:text-5xl md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-7"
+            >
+                A conversation with Lucy Bond
+            </h2>
+            <p class="md:text-xl text-lg text-gray-600">
+                Lucy Bond is an interior designer who started her career in New
+                Zealand, working for large architectural firms. We chatted to
+                her about design and starting her own studio.
+            </p>
+        </header>
+    </section>
+    <section class="container-main md:py-24 py-12 carousel">
+        <div class="carousel-slide scroll-smooth overflow-hidden w-full md:h-96 h-60">
+            <div class="flex h-full gap-12">
+                <img
+                    class="h-full"
+                    src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt=""
+                />
+                <img
+                    class="h-full"
+                    src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt=""
+                />
+                <img
+                    class="h-full"
+                    src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt=""
+                />
+            </div>
+        </div>
+        <div class="flex gap-4 mt-8">
+            <button class="button-outline arrow-left rounded-full">
+                <ArrowLeft />
+            </button>
+            <button class="button-outline arrow-right rounded-full">
+                <ArrowRight />
+            </button>
+        </div>
+    </section>
+    <section class="container-main">
+        <div class="h-[900px] p-24">
+            //Here comes content
+        </div>
+
+        <WriterCard/>
+    </section>
+    <LatestBlog/>
+    <ContractSection/>
+    <CtaSection/>
+    <FooterLarge/>
+</PageLayout>

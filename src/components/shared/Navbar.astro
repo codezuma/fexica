@@ -1,0 +1,136 @@
+---
+import XIcon from "../../icons/x-icon.astro";
+import MenuIcon from "../../icons/menu-icon.astro";
+import Logo from "../ui/logo.astro";
+type Props = {
+    dark?:boolean;
+}
+type NavLink = {
+    title:string,
+    path:string
+}
+const navlinks:NavLink[] = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Resources",
+    path: "/resources",
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+];
+
+const {dark =false} =  Astro.props;
+---
+
+
+{/*bg-white */}
+
+<nav id="primary-navbar" data-theme={dark?'dark':'light'} class:list={["h-20 w-full fixed top-0 flex justify-center z-50 transition-all",dark?'text-white!':'']}>
+<div class="container-main flex  justify-start items-center">
+        <a href="/" class="mr-12"><Logo dark={dark}/></a>
+        <div class="md:flex hidden gap-8">
+            {
+                navlinks.map((link) => (
+                    <a href={`${link.path}`} class:list={["font-semibold nav-link transition-all text-base  cursor-pointer",dark?"text-white hover:text-gray-200":'text-gray-600 hover:text-gray-800']}>
+                        {link.title}
+                    </a>
+                ))
+            }
+        </div>
+        <div class="ml-auto md:flex hidden gap-4">
+            <button class="button-secondary"> Log in</button>
+            <button class="button-primary"> Sign up</button>
+        </div>         
+           <button class="button-secondary navbar-mobile-toggle md:hidden overflow-hidden  ml-auto text-gray-600"><MenuIcon/></button>
+
+
+</div>
+</nav>
+<nav id="mobile-navbar" class="h-0 data-[state='open']:py-8 transition-all data-[state='open']:h-screen overflow-hidden py-0 flex flex-col justify-between px-4 z-50 fixed top-0 bg-white w-screen">
+    <div>
+
+        <div class="w-full flex justify-end mb-10">
+            <button class="button-secondary navbar-mobile-toggle ml-auto text-gray-600"><XIcon/></button>
+        </div>
+        <div class="flex flex-col gap-4">
+            
+            {
+                navlinks.map((link) => (
+                    <a href={`${link.path}`} class:list={["font-semibold  transition-all text-xl  cursor-pointer"]}>
+                    {link.title}
+                    </a>
+                    ))
+                }
+                </div>
+            </div>
+                <div class="flex flex-col mt-auto  gap-4">
+                    <button class="button-outline"> Log in</button>
+                    <button class="button-primary"> Sign up</button>
+                </div>
+</nav>
+
+
+<script is:inline>
+    function handleScroll() {
+        const navbar = document.querySelector("#primary-navbar");
+        const dark = navbar?.getAttribute('data-theme')=='dark';
+        const logo = navbar?.getElementsByClassName('logo')[0];
+        const navLinks = document.getElementsByClassName('nav-link');
+
+        if (window.scrollY > 0) {
+            navbar?.classList.add("bg-white");
+            navbar?.classList.remove("text-white!");
+            if(dark){
+                Array.from(navLinks).map((ele)=>{
+                    ele.classList.remove("text-white","hover:text-gray-200")
+                    ele.classList.add("text-gray-600","hover:text-gray-800")
+                })
+                if(logo)
+                logo.setAttribute('src','/logo.svg');
+            }
+        } else {
+            navbar?.classList.remove("bg-white");
+            if(dark){
+
+            Array.from(navLinks).map((ele)=>{
+                ele.classList.add("text-white","hover:text-gray-200")
+                ele.classList.remove("text-gray-600","hover:text-gray-800")
+            })
+            if(logo)
+            logo.setAttribute('src','/logo-white.svg');
+        }
+        }
+    }
+    window.onscroll = () => {
+        handleScroll();
+    };
+
+    window.removeEventListener("scroll", handleScroll);
+
+    const navButtons = document.getElementsByClassName('navbar-mobile-toggle');
+    const MobileNav = document.getElementById('mobile-navbar');
+    console.log(navButtons);
+    Array.from(navButtons).map(ele=>{
+        ele.addEventListener('click',()=>{
+            console.log('dete');
+            if(MobileNav.getAttribute('data-state'))
+            MobileNav.removeAttribute('data-state');
+           
+            else
+            MobileNav.setAttribute('data-state','open');
+
+
+            
+            
+        })
+    })
+</script>

@@ -1,0 +1,96 @@
+---
+import PageLayout from "../../layout/page-layout.astro";
+import WriterCard  from '../../components/shared/blog/writer-card.astro';
+import LatestBlog from '../../components/sections/blog/latest-blog-section.astro';
+import FooterLarge from "../../components/sections/home/footer-large.astro";
+import Avatar from "../../components/ui/avatar.astro";
+import CopyIcon from "../../icons/copy-icon.astro";
+import FacebookIcon from "../../icons/facebook-icon.astro";
+import TwitterIcon from "../../icons/twitter-icon.astro";
+import LinkedinIcon from "../../icons/linkedin-icon.astro";
+import NewsletterSection from "../../components/sections/newsletter-section.astro";
+---
+
+<PageLayout>
+    <section class="container-main mx-auto md:flex-row py-24 items-center flex-col md:min-h-[calc(100vh-80px)] mt-20 flex justify-end">
+                <div class="  md:px-4 px-2 w-full flex-1 flex items-center flex-col">
+            <header class="w-full md:mb-16 mb-8 flex justify-between   flex-col mx-auto text-start relative">
+                <span class="px-2 py-1 text-primary font-semibold mb-3">20 Jan 2024 • 10 min read</span>
+                <div class="mb-8">
+
+                    <h2
+                    class="xl:text-5xl md:text-4xl text-3xl !leading-snug text-gray-900 font-semibold mb-7"
+                    >
+                    Roy’s PeakWanaka, New Zealand                </h2>
+                    <p class="md:text-xl text-lg text-gray-600">
+                        New Zealand is famous for its breathtaking hiking trails that wind and weave their way through its beautiful landscapes.
+                    </p>
+                </div>
+            </header>
+            
+
+    </div>
+    <aside class=" bg-[url('https://random.imagecdn.app/500/500')] md:min-h-[calc(100vh-260px)]  h-[400px]  w-full block bg-no-repeat bg-cover md:flex-1 "/>
+
+    </section>
+    <section class="container-main md:flex-row flex-col-reverse flex gap-16">
+        <div class="flex flex-col">
+            <h5 class="font-medium hidden md:block mb-3 text-primary">Tables of content</h5>
+            <div class="flex-col mb-4 gap-3 hidden md:flex ">
+                <h5 class="font-medium text-gray-600">Introduction</h5>
+                <h5 class="font-medium text-gray-600">software tools</h5>
+                <h5 class="font-medium text-gray-600">Other resources</h5>
+                <h5 class="font-medium text-gray-600">Conclusion</h5>
+            </div>
+            <div class="py-4 mt-4 border-t">
+                <h5 class="font-medium mb-5 text-primary">Contributors</h5>
+
+                <div class="flex flex-col gap-6">
+                    <div class="flex gap-4 self-end mt-auto mr-auto ">
+                        <Avatar  src="https://random.imagecdn.app/100/100"/>
+                        <div>
+                            <h2 class=" font-semibold text-gray-900">Rene Wells</h2>
+                            <h2 class=" text-gray-600">Content Writer</h2>
+                        </div>
+                    </div>  <div class="flex gap-4 self-end mt-auto mr-auto ">
+                        <Avatar src="https://random.imagecdn.app/100/100"/>
+                        <div>
+                            <h2 class=" font-semibold text-gray-900">Rene Wells</h2>
+                            <h2 class=" text-gray-600">Content Writer</h2>
+                        </div>
+                    </div>  <div class="flex gap-4 self-end mt-auto mr-auto ">
+                        <Avatar src="https://random.imagecdn.app/100/100"/>
+                        <div>
+                            <h2 class="font-semibold text-gray-900">Rene Wells</h2>
+                            <h2 class=" text-gray-600">Content Writer</h2>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="py-4 mt-4 border-t">
+                <h5 class="font-medium mb-5 text-primary">Subscribe to our newsletter</h5>
+                <input class="mb-2 " placeholder="Enter your email" />
+                <button class="button-primary w-full">Subscribe</button>
+           </div>
+            <div class="py-4 mt-4 border-t">
+                <div class="flex gap-4 h-fit">
+                    <button class="button-outline">
+                       <CopyIcon/>
+                    </button>
+                    <button class="button-outline"><FacebookIcon/></button>
+                    <button class="button-outline"><TwitterIcon/></button>
+                    <button class="button-outline"><LinkedinIcon/></button>
+                   </div>
+            </div>
+        </div>
+        <div class="h-[900px] flex-col justify-end items-end xl:p-24">
+            //Here comes content
+            <WriterCard/>
+        </div>
+
+    </section>
+    <LatestBlog/>
+    <NewsletterSection/>
+    <FooterLarge/>
+</PageLayout>

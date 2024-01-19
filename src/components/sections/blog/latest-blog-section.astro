@@ -1,0 +1,62 @@
+---
+import BlogCard from "../../shared/blog/blog-card.astro";
+// data.js
+export const articles = [
+    {
+        title: "UX review presentations",
+        date: "20 Jan 2024",
+        imageSrc: "https://random.imagecdn.app/500/400",
+        altText: "Image Alt Text 1",
+        description: "How do you create compelling presentations that wow your colleagues and impress your managers?",
+        tags: ["marketing", "design", "presentation"]
+    },
+    {
+        title: "Web Development Best Practices",
+        date: "15 Feb 2024",
+        imageSrc: "https://random.imagecdn.app/500/400",
+        altText: "Image Alt Text 2",
+        description: "Learn the latest best practices in web development to build fast and efficient websites.",
+        tags: ["web development", "frontend", "performance"]
+    },
+    {
+        title: "Cooking Tips and Recipes",
+        date: "10 Mar 2024",
+        imageSrc: "https://random.imagecdn.app/500/400",
+        altText: "Image Alt Text 3",
+        description: "Discover new cooking tips and delicious recipes from around the world.",
+        tags: ["cooking", "recipes", "food"]
+    }
+];
+
+---
+
+<section class="container-main py-24">
+    <header class="w-full mb-16 justify-between flex text-start ">
+        <div>
+            <span class="text-primary font-semibold block mb-3"
+            >Our blog</span
+            >
+            <h2
+            class="md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-3"
+            >
+            Lastest blog posts
+        </h2>
+        <p class=" text-gray-600">
+            Tool and strategies modern teams need to help their companies grow.
+        </p>
+    </div>
+    <div class="md:block hidden">
+        <a href='/blog'>
+            <button class="button-primary">View All Post</button>
+        </a>
+    </div>
+    </header>
+    <main class="grid md:grid-cols-3  grid-cols-1 md:gap-12 gap-8 ">
+        {articles.map(article=><BlogCard className='col-span-1' {...article}/>)}
+    </main>
+    <div class="md:hidden block w-full mt-12">
+        <a href='/blog' class="w-full">
+            <button class="button-primary w-full">View All Post</button>
+        </a>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+---
+const features = [
+  {
+    title: "Share team inboxes",
+    description:
+      "Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.",
+    link: "Learn more", 
+  },
+  {
+    title: "Deliver instant answers",
+    description:
+      "An all-in-one customer service platform that helps you balance everything your customers need to be happy.",
+    link: "Learn more", 
+  },
+  {
+    title: "Manage your team with reports",
+    description:
+      "Measure what matters with Untitled’s easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.",
+    link: "Learn more", 
+  },
+];
+
+---
+<section class="container-main relative  ">
+    <div class="flex flex-col md:flex-row gap-16 pb-16 ">
+        <div class="flex-1">
+           {features.map(feature=>( <article class="border-l-4 border-gray-200 hover:border-primary transition-all px-6 py-4">
+                <h3 class="md:text-xl text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p class="text-gray-600 mb-5">{feature.description}</p>
+                <a class="font-semibold text-primary">{feature.link}</a>              
+            </article>))}
+        </div>
+        <div class="flex-1  flex items-end">
+          <img class="md:absolute  md:w-1/2 h-[calc(100)] right-0" src="/assets/images/feature-image.png" alt="feature-image-condign-monk">
+        </div>
+    </div>
+</section>

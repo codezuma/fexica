@@ -1,0 +1,28 @@
+---
+import Faq from "../shared/faq.svelte";
+let faqs = [
+    {
+      question: 'What is Svelte?',
+      answer: 'Svelte is a modern JavaScript framework for building user interfaces.',
+    },
+    {
+      question: 'How does Svelte differ from other frameworks?',
+      answer: 'Svelte compiles components to highly efficient JavaScript code at build time, resulting in smaller bundle sizes and faster runtime performance.',
+    },
+    // Add more FAQs as needed
+  ];
+---
+<section class="container-main">
+    <header class="w-full mx-auto mb-16 text-center md:w-3/5">
+        <h2 class="xl:text-5xl md:text-4xl text-3xl leading-snug text-gray-900 font-semibold mb-7">
+        Frequently asked questions  
+     </h2>
+        <p class="md:text-xl text-lg text-gray-600">
+            Everything you need to know about the product and billing.   
+        </p>
+    </header>
+    <div class="w-full md:w-3/5 mx-auto">
+
+      {faqs.map(faq=><Faq {question}={faq.question} {answer}={faq.answer} client:only="svelte"/>    )}
+    </div>
+</section>

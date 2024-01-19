@@ -1,0 +1,51 @@
+---
+import PageLayout from "../../layout/page-layout.astro";
+import WriterCard  from '../../components/shared/blog/writer-card.astro';
+import LatestBlog from '../../components/sections/blog/latest-blog-section.astro';
+import ContractSection from "../../components/sections/contract-section.astro";
+import CtaSection from "../../components/sections/home/cta-section.astro";
+import FooterLarge from "../../components/sections/home/footer-large.astro";
+import Avatar from "../../components/ui/avatar.astro";
+---
+
+<PageLayout>
+    <section class="container-main relative mx-auto px-0 md:flex-row flex-col-reverse md:min-h-[calc(100vh-80px)] mt-20 flex justify-end">
+                <div class="  px-4 w-full flex-1 flex items-center pt-24 md:mb-16 flex-col">
+            <header class="w-full md:mb-16 mb-8 flex justify-between   flex-col mx-auto text-start md:w-4/5">
+                <span class="px-2 py-1 text-primary font-semibold mb-3">20 Jan 2024 • 10 min read</span>
+                <div class="mb-8">
+
+                    <h2
+                    class="xl:text-5xl md:text-4xl text-3xl !leading-snug text-gray-900 font-semibold mb-7"
+                    >
+                    Roy’s PeakWanaka, New Zealand                </h2>
+                    <p class="md:text-xl text-lg text-gray-600">
+                        New Zealand is famous for its breathtaking hiking trails that wind and weave their way through its beautiful landscapes.
+                    </p>
+                </div>
+                <div class="flex gap-4 self-end mt-auto mr-auto ">
+                    <Avatar src="https://random.imagecdn.app/100/100"/>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">Rene Wells</h2>
+                        <h2 class=" text-gray-600">Content Writer</h2>
+                    </div>
+                </div>
+            </header>
+            
+
+    </div>
+    <aside class=" bg-[url('https://random.imagecdn.app/500/1200')] left-0 h-[400px] md:min-h-[calc(100vh-80px)] text-white block bg-no-repeat bg-cover md:flex-1 p-12"/>
+
+    </section>
+    <section class="container-main">
+        <div class="h-[900px] p-24">
+            //Here comes content
+        </div>
+
+        <WriterCard/>
+    </section>
+    <LatestBlog/>
+    <ContractSection/>
+    <CtaSection/>
+    <FooterLarge/>
+</PageLayout>
